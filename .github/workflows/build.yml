@@ -1,0 +1,28 @@
+name: build
+run-name: build
+
+on: [push]
+
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: download gcc
+        run: wget https://github.com/lordmilko/i686-elf-tools/releases/download/7.1.0/i686-elf-tools-linux.zip
+
+      - name: extract
+        run: unzip i686-elf-tools-linux.zip
+
+      - name: add to path
+        run: echo "$PWD/bin" >> $GITHUB_PATH
+
+      - name: build program
+        run: chmod +x build.sh && ./build.sh
+
+      - name: upload artifacts 
+        uses: actions/upload-artifact@v4
+        with:
+          name: result
+          path: result/
