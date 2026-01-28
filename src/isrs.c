@@ -89,9 +89,32 @@ unsigned char *exception_messages[] =
     "Division By Zero",
     "Debug",
     "Non Maskable Interrupt",
-    
-    ...                         /* Fill in the rest here from our Exceptions table */
-    
+    "Breakpoint Exception",
+    "Into Detected Overflow Exception",  /* Fill in the rest here from our Exceptions table */
+    "Out of Bounds Exception",
+    "Invalid Opcode Exception",
+    "No Coprocessor Exception",
+    "Double Fault Exception",
+    "Coprocessor Segment Overrun Exception",
+    "Bad TSS Exception",
+    "Segment Not Present Exception",
+    "Stack Fault Exception",
+    "General Protection Fault Exception",
+    "Page Fault Exception",
+    "Unknown Interrupt Exception",
+    "Coprocessor Fault Exception",
+    "Alignment Check Exception (486+)",
+    "Machine Check Exception (Pentium/586+)",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
+    "Reserved",
     "Reserved",
     "Reserved"
 };
