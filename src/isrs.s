@@ -90,6 +90,7 @@ isr8:
     jmp isr_common_stub
 isr9:
     cli
+    push byte 0
     push byte 9     
     jmp isr_common_stub
 isr10:
