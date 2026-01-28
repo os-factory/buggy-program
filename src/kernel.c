@@ -1,9 +1,16 @@
 #include <stdint.h>
+#include <stddef.h>
 uint8_t x = 0;
 uint8_t y = 0;
 const uint8_t Width = 80;
 const uint8_t Height = 25;
-
+size_t strlen(const char* str) 
+{
+	size_t len = 0;
+	while (str[len])
+		len++;
+	return len;
+}
 uint16_t write(uint16_t chara, uint16_t color) {
     return chara | color << 8;
 }
@@ -44,7 +51,17 @@ void init(void) {
                 }
         }
 }
+
+
+void string(char text[], uint16_t color3) {
+    for (int i = 0; i < strlen(text); i++) {
+        writechar(text[i]);
+    }
+}
+
 void kernel_main() {
 init();
-writechar('h', 15);
+gdt_install();
+string(“Installed GDT.\n", 2);
+string("Nothing to do.", 15);
 }
