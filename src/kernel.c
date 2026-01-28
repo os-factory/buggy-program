@@ -42,11 +42,14 @@ static inline uint8_t setcolor(enum vga_color fg, enum vga_color bg)
 	return fg | bg << 4;
 }
 void writechar(char arg, uint16_t color2) {
-if(arg == '\n') {
-	y++;
-}
-array[y * Width + x] = write(arg, color2);
-x++;
+	if(arg == '\n') {
+		y++;
+		x = 0;
+		return;
+	}
+	
+	array[y * Width + x] = write(arg, color2);
+	x++;
 }
 void init(void) {
       uint8_t terminal_color = setcolor(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
