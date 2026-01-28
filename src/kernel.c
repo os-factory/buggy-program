@@ -68,10 +68,7 @@ void string(char text[], uint16_t color3) {
     }
 }
 
-void isr0() {
-    int ok = 1;
-	string("IDT works.", 2);
-}
+
 void test_idt() {
 	int c = 1 / 0;
 }
