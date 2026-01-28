@@ -1,7 +1,7 @@
 #include <stdint.h>
 /* Public domain.  */
 #include <stddef.h>
-
+#include "idt.h"
 void *
 memset (void *dest, int val, size_t len)
 {
