@@ -1,6 +1,6 @@
-.global _idt_load
-.extern _idtp
-_idt_load:
+.global idt_load
+.extern idtp
+idt_load:
     lidt [_idtp]
     ret
 	 
