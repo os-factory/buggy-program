@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: download gcc
-        run: wget https://github.com/lordmilko/i686-elf-tools/releases/download/7.1.0/i686-elf-tools-linux.zip
+        run: wget https://github.com/lordmilko/i686-elf-tools/releases/download/15.2.0/i686-elf-tools-linux.zip
 
       - name: extract
         run: unzip i686-elf-tools-linux.zip
