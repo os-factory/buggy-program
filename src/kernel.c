@@ -1,6 +1,6 @@
 #include <stdint.h>
 #include <stddef.h>
-#include <gdt.h>
+
 uint8_t x = 0;
 uint8_t y = 0;
 const uint8_t Width = 80;
