@@ -2,6 +2,8 @@
 /* Defines a GDT entry. We say packed, because it prevents the
 *  compiler from doing things that it thinks is best: Prevent
 *  compiler "optimization" by packing */
+#ifndef GDT_SOURCE
+#define GDT_SOURCE
 struct gdt_entry
 {
     unsigned short limit_low;
@@ -74,3 +76,4 @@ void gdt_install()
     /* Flush out the old GDT and install the new changes! */
     gdt_flush();
 }
+#endif
