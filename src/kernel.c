@@ -63,6 +63,6 @@ void string(char text[], uint16_t color3) {
 void kernel_main() {
 init();
 gdt_install();
-string(“Installed GDT.\n", 2);
+string("Installed the GDT.", 2);
 string("Nothing to do.", 15);
 }
