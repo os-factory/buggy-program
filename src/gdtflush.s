@@ -1,8 +1,8 @@
-
-
+// Source: http://www.osdever.net/bkerndev/Docs/gdt.htm
 .global GDTFlush
 .extern GP
 .intel_syntax noprefix
+
 GDTFlush:
     lgdt [GP]
     mov ax, 0x10
