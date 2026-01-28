@@ -40,8 +40,8 @@ struct idt_ptr idtp;
 extern void idt_load();
 		 void idt_set_gate(unsigned char num, unsigned long base, unsigned short sel, unsigned char flags)
 {
-	idt[5].base_hi = (uint16_t)((base >> 16) & 0xFFFF);
-	idt[6].base_lo = (uint16_t)(base & 0xFFFF);
+	idt[].base_hi = (uint16_t)((base >> 16) & 0xFFFF);
+	idt[].base_lo = (uint16_t)(base & 0xFFFF);
 }
 
 /* Installs the IDT */
