@@ -1,10 +1,10 @@
-#include "gdt.h"
 // Source: http://www.osdever.net/bkerndev/Docs/gdt.htm
 /* Defines a GDT entry. We say packed, because it prevents the
 *  compiler from doing things that it thinks is best: Prevent
 *  compiler "optimization" by packing */
 #ifndef GDT_SOURCE
 #define GDT_SOURCE
+#include "gdt.h"
 struct gdt_entry
 {
     unsigned short limit_low;
