@@ -1,14 +1,12 @@
 # The Buggy Program
-the buggy program is a "kernel" or you could say, "program" that just prints h or whatever thing you would like it to print
-it was called buggy because it couldn't clear the screen properly when testing using qemu and left a bit of text.
-maybe it's just a issue in qemu itself. idk!
-# Requirements 
-1: i686-elf-gcc
+The Buggy Program is a "kernel" made in C.
 
-2: i686-elf-binutils
+Right now it just prints 'h' to the screen.
 
-3: libgcc
+It was called buggy because it couldn't clear the screen properly and left a bit of text when I was testing it with QEMU.
+# Requirements
+1. A unix-based enviroment.
+2. i686-elf-gcc
+3. i686-elf-as
 # Credits:
-OSDev Wiki: some parts of the kernel, boot.s and the linker script.
-
-komarutac: helped me with the os
+[OSDev Wiki](http://wiki.osdev.org), [OSDever](http://www.osdever.net), and contributors.
