@@ -41,14 +41,14 @@ static inline uint8_t setcolor(enum vga_color fg, enum vga_color bg)
 {
 	return fg | bg << 4;
 }
-void writechar(char arg, uint16_t color2) {
-	if(arg == '\n') {
+void writechar(char Letter, uint16_t Attribute) {
+	if(Letter == '\n') {
 		y++;
 		x = 0;
 		return;
 	}
 	
-	array[y * Width + x] = write(arg, color2);
+	array[y * Width + x] = write(Letter, Attribute);
 	x++;
 }
 void init(void) {
