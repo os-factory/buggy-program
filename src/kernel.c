@@ -1,7 +1,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include "gdt.h"
-
+#include "idt.h"
 
 uint8_t x = 0;
 uint8_t y = 0;
@@ -71,6 +71,7 @@ void string(char text[], uint16_t color3) {
 void kernel_main() {
 init();
 gdt_install();
-string("Installed the GDT.\n", 2);
+idt_install();
+string("Installed the GDT and the IDT.\n", 2);
 string("Nothing to do.", 15);
 }
