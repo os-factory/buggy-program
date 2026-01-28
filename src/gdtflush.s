@@ -1,6 +1,6 @@
 // Source: http://www.osdever.net/bkerndev/Docs/gdt.htm
-.global GDTFlush
-.extern GP
+.global gdt_flush
+.extern gp
 .intel_syntax noprefix
 
 gdt_flush:
