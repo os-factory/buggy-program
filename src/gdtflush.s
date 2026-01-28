@@ -3,8 +3,8 @@
 .extern GP
 .intel_syntax noprefix
 
-GDTFlush:
-    lgdt [GP]
+gdt_flush:
+    lgdt [gp]
     mov ax, 0x10
     mov ds, ax
     mov es, ax
