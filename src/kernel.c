@@ -55,7 +55,7 @@ void init(void) {
 
 void string(char text[], uint16_t color3) {
     for (int i = 0; i < strlen(text); i++) {
-        writechar(text[i]);
+        writechar(text[i], color3);
     }
 }
 
