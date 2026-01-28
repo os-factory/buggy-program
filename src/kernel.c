@@ -42,6 +42,7 @@ static inline uint8_t setcolor(enum vga_color fg, enum vga_color bg)
 	return fg | bg << 4;
 }
 void writechar(char arg, uint16_t color2) {
+if(arg == '\n') {}
 array[y * Width + x] = write(arg, color2);
 x++;
 }
@@ -65,6 +66,6 @@ void string(char text[], uint16_t color3) {
 void kernel_main() {
 init();
 gdt_install();
-string("Installed the GDT.", 2);
+string("Installed the GDT.\n", 2);
 string("Nothing to do.", 15);
 }
