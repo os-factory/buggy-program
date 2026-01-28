@@ -68,10 +68,17 @@ void string(char text[], uint16_t color3) {
     }
 }
 
+void isr0() {
+    int ok = 1;
+	string("IDT works.", 2);
+}
+void test_idt() {
+	int c = 1 / 0;
+}
 void kernel_main() {
 init();
 gdt_install();
 idt_install();
 string("Installed the GDT and the IDT.\n", 2);
-string("Nothing to do.", 15);
+string("Running test_idt function..", 15);
 }
