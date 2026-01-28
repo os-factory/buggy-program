@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <stddef.h>
+#include "gdt.h"
 
 
 uint8_t x = 0;
