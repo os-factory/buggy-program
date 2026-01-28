@@ -1,5 +1,4 @@
-
-
+// Source: http://www.osdever.net/bkerndev/Docs/gdt.htm
 /* Defines a GDT entry. We say packed, because it prevents the
 *  compiler from doing things that it thinks is best: Prevent
 *  compiler "optimization" by packing */
