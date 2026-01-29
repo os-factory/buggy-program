@@ -1,3 +1,4 @@
+
 #include <stdint.h>
 #include <stddef.h>
 #include "gdt.h"
@@ -44,10 +45,43 @@ static inline uint8_t setcolor(enum vga_color fg, enum vga_color bg)
 	return fg | bg << 4;
 }
 
-void writeint(int Integer, uint16_t Attribute) {
-	array[y * Width + x] = write(Integer, Attribute); // This is not how you convert an integer to a string.
-	x++;
+char sbase20[] = {
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K'
+};
+
+char sbase16[] = {
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'
+};
+
+char sbase10[] = {
+    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'
+};
+
+char sbase2[] = {
+    '0', '1'
+};
+
+void int_to_string(int Integer, char *Destination, char Array[], int Division) {
+    int i = 0;
+
+    if (Integer == 0) {
+        Destination[i++] = '0';
+    }
+
+    while (Integer > 0) {
+        Destination[i++] = Array[Integer % Division];
+        Integer /= Division;
+    }
+
+    for (int j = 0, k = i - 1; j < k; j++, k--) {
+        char Temp = Destination[j];
+        Destination[j] = Destination[k];
+        Destination[k] = Temp;
+    }
+
+    Destination[i] = '\0';
 }
+ 
 
 void writechar(char Letter, uint16_t Attribute2) {
 	if(Letter == '\n') {
@@ -82,4 +116,5 @@ void kernel_main() {
 	gdt_install();
 	idt_install();
 	writestring("Installed the GDT and the IDT.\n", 2);
+	writestring("Info: version 3.01a, Filename: main.kernel", 15)
 }
