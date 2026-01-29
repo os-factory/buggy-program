@@ -3,6 +3,8 @@
 #include "gdt.h"
 #include "idt.h"
 #include "print.h"
+#include "isrs.h"
+
 uint8_t x = 0;
 uint8_t y = 0;
 const uint8_t Width = 80;
@@ -76,6 +78,7 @@ void kernel_main() {
 init();
 gdt_install();
 idt_install();
+isrs_install();
 string("Installed the GDT and the IDT.\n", 2);
 string("Running test_idt function..", 15);
 }
