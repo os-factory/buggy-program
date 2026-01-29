@@ -73,7 +73,7 @@ void helper() {
 	string("IDT works", 2);
 }
 void isr0() {
-asm(";mov eax, helper");
+asm(";movw eax, helper");
 asm("call helper");
 asm("iret");
 }
