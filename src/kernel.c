@@ -70,7 +70,7 @@ void string(char text[], uint16_t color3) {
     }
 }
 void helper() {
-	string("IDT works");
+	string("IDT works", 2);
 }
 void isr0() {
 asm(";mov eax, helper");
