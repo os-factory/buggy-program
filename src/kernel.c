@@ -71,7 +71,7 @@ void string(char text[], uint16_t color3) {
 }
 
 void isr0() {
-string("IDT works.", 2);
+for(;;);
 asm("iret");
 }
 void test_idt() {
