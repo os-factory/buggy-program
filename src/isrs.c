@@ -1,5 +1,6 @@
 #include "isrs.h"
 #include "idt.h"
+#include "print.h"
 /* These are function prototypes for all of the exception
 *  handlers: The first 32 entries in the IDT are reserved
 *  by Intel, and are designed to service exceptions! */
@@ -133,8 +134,8 @@ void fault_handler(struct regs *r)
         /* Display the description for the Exception that occurred.
         *  In this tutorial, we will simply halt the system using an
         *  infinite loop */
-        puts(exception_messages[r->int_no]);
-        puts(" Exception. System Halted!\n");
+        string(exception_messages[r->int_no], 15);
+        string(" Exception. System Halted!\n", 4);
         for (;;);
     }
 }
