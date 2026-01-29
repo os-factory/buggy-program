@@ -2,7 +2,7 @@
 #include <stddef.h>
 #include "gdt.h"
 #include "idt.h"
-
+#include "print.h"
 uint8_t x = 0;
 uint8_t y = 0;
 const uint8_t Width = 80;
@@ -17,7 +17,7 @@ size_t strlen(const char* str)
 uint16_t write(uint16_t chara, uint16_t color) {
     return chara | color << 8;
 }
-uint16_t* array = (uint16_t*)0xB8000;
+array = (uint16_t*)0xB8000;
 enum vga_color {
 	VGA_COLOR_BLACK = 0,
 	VGA_COLOR_BLUE = 1,
