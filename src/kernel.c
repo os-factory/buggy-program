@@ -75,15 +75,10 @@ void writestring(char text[], uint16_t color3) {
         writechar(text[i], color3);
     }
 }
-void test_idt() {
-	int c = 1 / 0;
-	writeint(c, 2);
-}
+
 void kernel_main() {
 	clear();
 	gdt_install();
 	idt_install();
 	writestring("Installed the GDT and the IDT.\n", 2);
-	writestring("Running test_idt function..", 15);
-	test_idt();
 }
