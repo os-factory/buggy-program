@@ -134,9 +134,10 @@ void _fault_handler(struct regs *r)
         /* Display the description for the Exception that occurred.
         *  In this tutorial, we will simply halt the system using an
         *  infinite loop */
-        string(exception_messages[r->int_no], 15);
-        string(" Exception. System Halted!\n", 4);
-        for (;;);
+        writestring(exception_messages[r->int_no], 15);
+        writestring("System Halted!\n", 4);
+        __asm ("cli");
+        __asm ("hlt");
     }
 }
  
