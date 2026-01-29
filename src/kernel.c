@@ -45,7 +45,7 @@ static inline uint8_t setcolor(enum vga_color fg, enum vga_color bg)
 }
 
 void writeint(int Integer, uint16_t Attribute) {
-	array[y * Width + x] = write(Letter, Attribute);
+	array[y * Width + x] = write(Integer, Attribute);
 	x++;
 }
 void writechar(char Letter, uint16_t Attribute2) {
@@ -73,7 +73,7 @@ void string(char text[], uint16_t color3) {
     for (int i = 0; i < strlen(text); i++) {
         writechar(text[i], color3);
     }
-}t
+}
 void test_idt() {
 	int c = 1 / 0;
 	writeint(c, 2);
