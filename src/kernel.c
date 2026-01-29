@@ -71,16 +71,6 @@ void string(char text[], uint16_t color3) {
 }
 
 void isr0() {
-asm volatile(
-    "mov $0x10, %%ax \n\t"
-    "mov %%ax, %%ds \n\t"
-    "mov %%ax, %%es \n\t"
-    "mov %%ax, %%fs \n\t"
-    "mov %%ax, %%gs \n\t"
-    :
-    :
-    : "ax"
-); 
 string("IDT works.", 2);
 asm("iret");
 }
@@ -94,4 +84,5 @@ idt_install();
 isrs_install();
 string("Installed the GDT and the IDT.\n", 2);
 string("Running test_idt function..", 15);
+test_idt();
 }
