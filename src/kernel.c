@@ -51,6 +51,7 @@ void writeint(int Integer, uint16_t Attribute) {
 
 void writechar(char Letter, uint16_t Attribute2) {
 	if(Letter == '\n') {
+		// TODO: Check if y is equal to Height and scroll for the next line.
 		y++;
 		x = 0;
 		return;
