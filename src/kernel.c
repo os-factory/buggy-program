@@ -69,9 +69,12 @@ void string(char text[], uint16_t color3) {
         writechar(text[i], color3);
     }
 }
-
+void helper() {
+	string("IDT works");
+}
 void isr0() {
-for(;;);
+asm(";mov eax, helper");
+asm("call helper");
 asm("iret");
 }
 void test_idt() {
