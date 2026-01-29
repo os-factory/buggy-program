@@ -71,6 +71,11 @@ void string(char text[], uint16_t color3) {
 }
 
 void isr0() {
+asm volatile("mov ax, 0x10" ::: "ax");
+asm volatile("mov ds, ax" ::: "ax");
+asm volatile("mov es, ax" ::: "ax");
+asm volatile("mov fs, ax" ::: "ax");
+asm volatile("mov gs, ax" ::: "ax");
 string("IDT works.", 2);
 asm("iret");
 }
