@@ -17,7 +17,7 @@ size_t strlen(const char* str)
 uint16_t write(uint16_t chara, uint16_t color) {
     return chara | color << 8;
 }
-array = (uint16_t*)0xB8000;
+uint16_t* array = (uint16_t*)0xB8000;
 enum vga_color {
 	VGA_COLOR_BLACK = 0,
 	VGA_COLOR_BLUE = 1,
