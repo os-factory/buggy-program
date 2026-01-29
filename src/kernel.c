@@ -95,13 +95,13 @@ void writechar(char Letter, uint16_t Attribute2) {
 	x++;
 }
 void clear(void) {
-      uint8_t terminal_color = setcolor(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
-        for (uint8_t y = 0; y < Height; y++) {
-                for (uint8_t x = 0; x < Width; x++) {
-                const uint8_t index = y * Width + x;
-		array[index] = write(' ', terminal_color);
-                }
-        }
+	uint8_t terminal_color = setcolor(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
+	for (uint8_t y = 0; y < Height; y++) {
+		for (uint8_t x = 0; x < Width; x++) {
+			const uint8_t index = y * Width + x;
+			array[index] = write(' ', terminal_color);
+		}
+	}
 }
 
 
@@ -116,5 +116,5 @@ void kernel_main() {
 	gdt_install();
 	idt_install();
 	writestring("Installed the GDT and the IDT.\n", 2);
-	writestring("Info: version 3.01a, Filename: main.kernel", 15)
+	writestring("Info: version 3.01a, Filename: main.kernel", 15);
 }
