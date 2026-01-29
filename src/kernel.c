@@ -82,7 +82,6 @@ void kernel_main() {
 init();
 gdt_install();
 idt_install();
-isrs_install();
 string("Installed the GDT and the IDT.\n", 2);
 string("Running test_idt function..", 15);
 test_idt();
