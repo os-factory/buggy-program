@@ -45,9 +45,10 @@ static inline uint8_t setcolor(enum vga_color fg, enum vga_color bg)
 }
 
 void writeint(int Integer, uint16_t Attribute) {
-	array[y * Width + x] = write(Integer, Attribute);
+	array[y * Width + x] = write(Integer, Attribute); // This is not how you convert an integer to a string.
 	x++;
 }
+
 void writechar(char Letter, uint16_t Attribute2) {
 	if(Letter == '\n') {
 		y++;
@@ -58,7 +59,7 @@ void writechar(char Letter, uint16_t Attribute2) {
 	array[y * Width + x] = write(Letter, Attribute2);
 	x++;
 }
-void init(void) {
+void clear(void) {
       uint8_t terminal_color = setcolor(VGA_COLOR_LIGHT_GREY, VGA_COLOR_BLACK);
         for (uint8_t y = 0; y < Height; y++) {
                 for (uint8_t x = 0; x < Width; x++) {
@@ -69,7 +70,7 @@ void init(void) {
 }
 
 
-void string(char text[], uint16_t color3) {
+void writestring(char text[], uint16_t color3) {
     for (int i = 0; i < strlen(text); i++) {
         writechar(text[i], color3);
     }
@@ -79,10 +80,10 @@ void test_idt() {
 	writeint(c, 2);
 }
 void kernel_main() {
-init();
-gdt_install();
-idt_install();
-string("Installed the GDT and the IDT.\n", 2);
-string("Running test_idt function..", 15);
-test_idt();
+	clear();
+	gdt_install();
+	idt_install();
+	writestring("Installed the GDT and the IDT.\n", 2);
+	writestring("Running test_idt function..", 15);
+	test_idt();
 }
