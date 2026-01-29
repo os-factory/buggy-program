@@ -42,6 +42,9 @@ extern void idt_load();
 {
 	idt[num].base_hi = (uint16_t)((base >> 16) & 0xFFFF);
 	idt[num].base_lo = (uint16_t)(base & 0xFFFF);
+	idt[num].sel = 0x08;      
+	idt[num].always0 = 0;
+    idt[num].flags = 0x8E;    
 }
 
 /* Installs the IDT */
