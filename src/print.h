@@ -1,3 +1,5 @@
+#include <stdint.h>
+#include <stddef.h>
 size_t strlen();
 uint16_t write();
 void writechar();
