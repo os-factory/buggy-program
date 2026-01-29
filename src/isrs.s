@@ -202,7 +202,7 @@ isr31:
     jmp isr_common_stub
 
 
-extern fault_handler
+extern _fault_handler
 
 
 isr_common_stub:
