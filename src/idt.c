@@ -2,6 +2,7 @@
 /* Public domain.  */
 #include <stddef.h>
 #include "idt.h"
+#include "isrs.h"
 void *
 memset (void *dest, int val, size_t len)
 {
@@ -58,7 +59,8 @@ void idt_install()
     memset(&idt, 0, sizeof(struct idt_entry) * 256);
 
     /* Add any new ISRs to the IDT here using idt_set_gate */
-
+	isrs_install();
+	
     /* Points the processor's internal register to the new IDT */
     idt_load();
 }
