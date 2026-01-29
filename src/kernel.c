@@ -69,17 +69,7 @@ void string(char text[], uint16_t color3) {
         writechar(text[i], color3);
     }
 }
-void helper() {
-	string("IDT works", 2);
-}
-void isr0() {
-asm(";movl helper, %eax");
-asm("call helper");
-asm("iret");
-}
-void test_idt() {
-	int c = 1 / 0;
-}
+
 void kernel_main() {
 init();
 gdt_install();
