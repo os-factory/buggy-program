@@ -11,6 +11,8 @@ It was called buggy because it couldn't clear the screen properly and left a bit
 # Credits:
 [OSDev Wiki](http://wiki.osdev.org), [OSDever](http://www.osdever.net), and contributors.
 
-Disclaimer: This project uses AI code, because I (Iaosi21) couldn't get the ISR to work. 
+Old disclaimer: This project uses AI code, because I (Iaosi21) couldn't get the ISR to work. 
+
+I (komarutac) removed the AI code and fixed it using real information.
 
 The rest of the code is made by me and the contributors.
