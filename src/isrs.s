@@ -1,5 +1,5 @@
 
-global isr0
+
 global isr1
 global isr2
 global isr3
@@ -33,12 +33,7 @@ global isr30
 global isr31
 
 
-isr0:
-    cli
-    push byte 0    
-                
-    push byte 0
-    jmp isr_common_stub
+
 
 
 isr1:
