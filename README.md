@@ -10,3 +10,4 @@ It was called buggy because it couldn't clear the screen properly and left a bit
 3. i686-elf-as
 # Credits:
 [OSDev Wiki](http://wiki.osdev.org), [OSDever](http://www.osdever.net), and contributors.
+Disclaimer: This project had some ai code. the usage is because i couldn't get ISR to work. the rest of the code is made by me and the contributors.
