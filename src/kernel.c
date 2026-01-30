@@ -205,6 +205,7 @@ void kernel_main() {
 	idt_install();
 	irq_install();
 	irq_install_handler(1, keyboard_handler);
+	asm("sti");
 	writestring("Installed the GDT.\n", 2);
 	writestring("Installed the IDT.\n", 2);
 	writestring("Installed the IRQs.\n", 2);
