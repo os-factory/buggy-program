@@ -5,6 +5,7 @@
 #include "idt.h"
 #include "print.h"
 #include "isrs.h"
+#include "irq.h"
 
 uint8_t x = 0;
 uint8_t y = 0;
@@ -115,6 +116,8 @@ void kernel_main() {
 	clear();
 	gdt_install();
 	idt_install();
-	writestring("Installed the GDT and the IDT.\n", 2);
-	writestring("Info: version 3.01a, Filename: main.kernel", 15);
+	irq_install();
+	writestring("Installed the GDT.\n", 2);
+	writestring("Installed the IDT.\n", 2);
+	writestring("Info: version 3.1a, Filename: main.kernel", 15);
 }
