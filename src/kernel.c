@@ -119,6 +119,6 @@ void kernel_main() {
 	irq_install();
 	writestring("Installed the GDT.\n", 2);
 	writestring("Installed the IDT.\n", 2);
-	writestring("Installed the IRQ.\n", 2);
-	writestring("Info: version 3.1a, Filename: main.kernel", 15);
+	writestring("Installed the IRQs.\n", 2);
+	writestring("Info: version 3.11a, Filename: main.kernel", 15);
 }
