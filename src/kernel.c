@@ -172,7 +172,7 @@ void keyboard_handler(struct regs *r)
     unsigned char scancode;
 
     /* Read from the keyboard's data buffer */
-    scancode = intb(0x60);
+    scancode = inb(0x60);
 
     /* If the top bit of the byte we read from the keyboard is
     *  set, that means that a key has just been released */
@@ -195,7 +195,7 @@ void keyboard_handler(struct regs *r)
         *  to the above layout to correspond to 'shift' being
         *  held. If shift is held using the larger lookup table,
         *  you would add 128 to the scancode when you look for it */
-        putch(kbdus[scancode]);
+        writechar(kbdus[scancode], 15);
     }
 }
 
