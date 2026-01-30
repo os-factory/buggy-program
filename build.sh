@@ -16,7 +16,7 @@ i686-elf-as src/boot.s -o build/boot.o
 i686-elf-as src/gdtflush.s -o build/gdtflush.o 
 i686-elf-as src/idt.s -o build/idts.o
 nasm -f elf32 src/isrs.s -o build/isrss.o
-nasm -f elf32 src/irq.s -o build/irqs.s
+nasm -f elf32 src/irq.s -o build/irqs.o
 i686-elf-gcc -nostdlib -T src/linker.ld \
 -o result/main.kernel \
 build/boot.o build/kernel.o build/gdt.o build/gdtflush.o build/idt.o build/idts.o build/isrs.o build/isrss.o build/irq.o build/irqs.o \
