@@ -110,13 +110,13 @@ irq1:
     push byte 46
     jmp irq_common_stub
 ; 47: IRQ15
-_irq15:
+irq15:
     cli
     push byte 0
     push byte 47
     jmp irq_common_stub
 
-extern _irq_handler
+extern irq_handler
 
 ; This is a stub that we have created for IRQ based ISRs. This calls
 ; '_irq_handler' in our C code. We need to create this in an 'irq.c'
@@ -133,7 +133,7 @@ irq_common_stub:
     mov gs, ax
     mov eax, esp
     push eax
-    mov eax, _irq_handler
+    mov eax, irq_handler
     call eax
     pop eax
     pop gs
