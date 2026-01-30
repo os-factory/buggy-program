@@ -24,12 +24,7 @@ _irq0:
     push byte 32
     jmp irq_common_stub
 
-_irq0:
-    cli
-    push byte 0    ; Note that these don't push an error code on the stack:
-                   ; We need to push a dummy error code
-    push byte 32
-    jmp irq_common_stub 
+ 
   _irq1:
     cli
     push byte 0    ; Note that these don't push an error code on the stack:
