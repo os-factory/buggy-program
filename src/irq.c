@@ -2,6 +2,7 @@
 #include "idt.h"
 #include "irq.h"
 #include "isrs.h"
+#include "print.h"
 /* These are own ISRs that point to our special IRQ handler
 *  instead of the regular 'fault_handler' function */
 extern void irq0();
@@ -107,7 +108,7 @@ void irq_install()
 *  an EOI, you won't raise any more IRQs */
 void irq_handler(struct regs *r)
 {
-    putch('.');   
+    writechar('.', 15);   
     if (r->int_no >= 40)
         outportb(0xA0, 0x20);
     outportb(0x20, 0x20);
