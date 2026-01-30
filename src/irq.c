@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include "idt.h"
 #include "irq.h"
 #include "isrs.h"
