@@ -204,10 +204,10 @@ void kernel_main() {
 	gdt_install();
 	idt_install();
 	irq_install();
-	__asm__ __volatile__ ("sti");  
+	__asm__ __volatile__ ("sti");
 	irq_install_handler(33, keyboard_handler);
 	writestring("Installed the GDT.\n", 2);
 	writestring("Installed the IDT.\n", 2);
 	writestring("Installed the IRQs.\n", 2);
-	writestring("Info: version 3.11a, Filename: main.kernel\n", 15);
+	writestring("Info: version 3.11a, Filename: main.kernel", 15);
 }
