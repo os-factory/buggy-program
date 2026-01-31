@@ -210,4 +210,5 @@ void kernel_main() {
 	writestring("Installed the IDT.\n", 2);
 	writestring("Installed the IRQs.\n", 2);
 	writestring("Info: version 3.11a, Filename: main.kernel\n", 15);
+	clear();
 }
