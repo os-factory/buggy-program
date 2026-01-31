@@ -106,7 +106,7 @@ void irq_install()
 *  an EOI, you won't raise any more IRQs */
 void irq_handler(struct regs *r)
 {
-    /* This is a blank function pointer */
+    writechar("h", 15);
     void (*handler)(struct regs *r);
 
     /* Find out if we have a custom handler to run for this
