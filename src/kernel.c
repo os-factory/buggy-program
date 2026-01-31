@@ -204,8 +204,8 @@ void kernel_main() {
 	gdt_install();
 	idt_install();
 	irq_install();
+	__asm__ __volatile__ ("sti");  
 	irq_install_handler(33, keyboard_handler);
-	__asm__ __volatile__ ("sti"); 
 	writestring("Installed the GDT.\n", 2);
 	writestring("Installed the IDT.\n", 2);
 	writestring("Installed the IRQs.\n", 2);
