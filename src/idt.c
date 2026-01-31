@@ -3,6 +3,7 @@
 #include <stddef.h>
 #include "idt.h"
 #include "isrs.h"
+#include "irq.h"
 void *
 memset (void *dest, int val, size_t len)
 {
@@ -60,7 +61,7 @@ void idt_install()
 
     /* Add any new ISRs to the IDT here using idt_set_gate */
 	isrs_install();
-	
+	irq_install();
     /* Points the processor's internal register to the new IDT */
     idt_load();
 }
