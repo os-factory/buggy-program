@@ -67,8 +67,6 @@ void irq_remap(void)
     outportb(0xA1, 0x02);
     outportb(0x21, 0x01);
     outportb(0xA1, 0x01);
-    outportb(0x21, 0x0);
-    outportb(0xA1, 0x0);
 }
 
 /* We first remap the interrupt controllers, and then we install
@@ -130,4 +128,6 @@ void irq_handler(struct regs *r)
     /* In either case, we need to send an EOI to the master
     *  interrupt controller too */
     outportb(0x20, 0x20);
+    outb(0x21,0xfd);
+   outb(0xa1,0xff);
 } 
