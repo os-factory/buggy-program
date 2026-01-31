@@ -8,7 +8,7 @@ It was called buggy because it couldn't clear the screen properly and left a bit
 1. A unix-based enviroment.
 2. i686-elf-gcc
 3. i686-elf-as
-# Credits:
+# Credits
 [OSDev Wiki](http://wiki.osdev.org), [OSDever](http://www.osdever.net), and contributors.
 
 Old disclaimer: This project uses AI code, because I (Iaosi21) couldn't get the ISR to work. 
